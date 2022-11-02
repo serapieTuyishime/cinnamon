@@ -12,10 +12,10 @@ export default function Footer() {
         ],
     };
     return (
-        <div className="p-20 dark-area">
+        <div className="px-6 py-20 lg:p-20 dark-area">
             <div className="grid gap-8">
-                <div className="flex">
-                    <div className="w-1/3">
+                <div className="grid gap-12 sm:flex">
+                    <div className="lg:w-1/3">
                         <Image
                             src="/logo-white.svg"
                             height={20}
@@ -23,12 +23,12 @@ export default function Footer() {
                             alt="Logo area"
                         />
                     </div>
-                    <div className="text-4xl font-montBold ">
+                    <div className="w-1/2 sm:w-full text-2xl lg:text-4xl font-montBold ">
                         All software, zero bullshit.
                     </div>
                 </div>
-                <div className="flex items-center">
-                    <div className="grid gap-3 text-light w-1/3 ">
+                <div className="grid lg:flex items-center">
+                    <div className="grid gap-3 grid-cols-2 text-light lg:w-1/3 ">
                         <Link href="/">Home</Link>
                         <Link href="/projects">Projects</Link>
                         <Link href="/services">Services</Link>
@@ -36,10 +36,10 @@ export default function Footer() {
                         <Link href="/careers">Carrers</Link>
                         <Link href="/blogs">Blog</Link>
                     </div>
-                    <div className="grid grid-cols-3 gap-16 w-2/3">
+                    <div className="lg:mt-0 grid grid-cols-2 lg:grid-cols-3 lg:gap-16 lg:w-2/3">
                         {data.offices.map((key, index) => {
                             return (
-                                <div className="" key={key}>
+                                <div className="mt-14 lg:mt-0" key={key}>
                                     <label className="font-montBold">
                                         {data.offices[index]}
                                     </label>
@@ -52,13 +52,13 @@ export default function Footer() {
                         })}
                     </div>
                 </div>
-                <div className="flex justify-between items-end">
-                    <div className="w-1/4">
+                <div className="flex flex-col w-full lg:flex-row justify-between items-end">
+                    <div className="lg:w-1/4 w-full order-last lg:order-none text-center lg:text-left">
                         <Link className="underline" href="/">
                             hello@cinnamon.agency
                         </Link>
                     </div>
-                    <div className="grid w-1/4 gap-4 ">
+                    <div className="grid w-full lg:w-1/4 gap-4 ">
                         <label className="font-montBold">Our newsletter</label>
                         <label className="text-lg text-light">
                             Your E-mail
@@ -66,7 +66,7 @@ export default function Footer() {
                         <hr className="text-light" />
                         <Button text="Subscribe" block />
                     </div>
-                    <div className="grid content-end justify-items-end gap-4 w-1/3">
+                    <div className="grid justify-items-center lg:content-end lg:justify-items-end lg:gap-4 gap-8 my-10 lg:my-0  w-full lg:w-1/3">
                         <Image
                             width={216}
                             height={65}
@@ -82,13 +82,14 @@ export default function Footer() {
                     </div>
                 </div>
                 <hr />
-                <div className="flex justify-between">
-                    <div className="flex text-grey gap-4">
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-between">
+                    <div className="flex text-grey gap-4 ">
                         <span className="">@ cinnamon</span>
                         <Link href='/' className="underline font-montBold">
                             Privacy policy
                         </Link>
                     </div>
+                    <hr className=" h-0.5 w-full bg-grey lg:hidden"/>
                     <div className="flex gap-4">
                             <Link
                                 href="https://www.linkedin.com/company/cinnamon-llc"

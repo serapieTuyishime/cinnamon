@@ -11,9 +11,9 @@ export default function Offices() {
         ],
     };
     return (
-        <div className="px-20 grid gap-8 pt-36">
-            <h1 className="text-5.5xl mb-12 font-montBold">Our offices</h1>
-            <div className="grid grid-cols-2  gap-8">
+        <div className=" px-6 lg:px-20 grid gap-4 lg:gap-8 pt-24 lg:pt-36">
+            <h1 className="text-4.3xl lg:text-5.5xl lg:mb-12 font-montBold">Our offices</h1>
+            <div className="grid lg:grid-cols-2  gap-8">
                 {data.offices.map((key, index) => {
                     return (
                         <Link

@@ -23,11 +23,11 @@ export default function Navigation() {
 
     return (
         <div
-            className={`navigation w-full flex gap-8 px-20 py-4 items-center justify-around container mx-auto sticky top-0 z-10  ${
+            className={`navigation w-full flex gap-8 px-6 lg:px-20 py-4 items-center lg:justify-around justify-between container mx-auto sticky top-0 z-10  ${
                 pageScrolled ? "text-dark bg-white" : "dark-area "
-            }`}
+            }  `}
         >
-            <Link href="/" className="w-1/3">
+            <Link href="/" className="w-1/3 ">
                 {pageScrolled ? (
                     <Image
                         src="/logo-dark.svg"
@@ -44,14 +44,14 @@ export default function Navigation() {
                     />
                 )}
             </Link>
-            <div className="flex font-montSemiBold  gap-8 capitalize">
+            <div className="hidden lg:flex font-montSemiBold  gap-8 capitalize">
                 <Link href="/projects">Projects</Link>
                 <Link href="/services">Services</Link>
                 <Link href="/about">About us</Link>
                 <Link href="/careers">Careers</Link>
                 <Link href="/blog">Blog</Link>
             </div>
-            <div className="flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8">
                 <div className="rounded-full hover:bg-primary">
                     <Image
                         src="/play.svg"
@@ -62,6 +62,13 @@ export default function Navigation() {
                 </div>
                 <Button text="contact us" />
             </div>
+            <Image
+                src="/menu.svg"
+                height={32}
+                width={32}
+                alt="Menu"
+                className="lg:hidden"
+            />
         </div>
     );
 }
