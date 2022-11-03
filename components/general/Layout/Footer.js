@@ -12,10 +12,11 @@ export default function Footer() {
         ],
     };
     return (
-        <div className="px-6 py-20 lg:p-20 dark-area">
+       <div className="dark-area">
+         <div className="px-6 py-20 sm:py-20 dark-area max-w-6xl container mx-auto">
             <div className="grid gap-8">
                 <div className="grid gap-12 sm:flex">
-                    <div className="lg:w-1/3">
+                    <div className="sm:w-1/3">
                         <Image
                             src="/logo-white.svg"
                             height={20}
@@ -27,8 +28,8 @@ export default function Footer() {
                         All software, zero bullshit.
                     </div>
                 </div>
-                <div className="grid lg:flex items-center">
-                    <div className="grid gap-3 grid-cols-2 text-light lg:w-1/3 ">
+                <div className="grid sm:flex items-center">
+                    <div className="grid gap-3 grid-cols-2 sm:grid-cols-1 text-light sm:w-1/3 ">
                         <Link href="/">Home</Link>
                         <Link href="/projects">Projects</Link>
                         <Link href="/services">Services</Link>
@@ -36,10 +37,10 @@ export default function Footer() {
                         <Link href="/careers">Carrers</Link>
                         <Link href="/blogs">Blog</Link>
                     </div>
-                    <div className="lg:mt-0 grid grid-cols-2 lg:grid-cols-3 lg:gap-16 lg:w-2/3">
+                    <div className="sm:mt-0 grid grid-cols-2 sm:grid-cols-3 sm:gap-16 sm:w-2/3">
                         {data.offices.map((key, index) => {
                             return (
-                                <div className="mt-14 lg:mt-0" key={key}>
+                                <div className="mt-14 sm:mt-0" key={key}>
                                     <label className="font-montBold">
                                         {data.offices[index]}
                                     </label>
@@ -52,13 +53,13 @@ export default function Footer() {
                         })}
                     </div>
                 </div>
-                <div className="flex flex-col w-full lg:flex-row justify-between items-end">
-                    <div className="lg:w-1/4 w-full order-last lg:order-none text-center lg:text-left">
+                <div className="flex flex-col w-full sm:flex-row justify-between items-end">
+                    <div className="sm:w-1/4 w-full order-last sm:order-none text-center sm:text-left">
                         <Link className="underline" href="/">
                             hello@cinnamon.agency
                         </Link>
                     </div>
-                    <div className="grid w-full lg:w-1/4 gap-4 ">
+                    <div className="grid w-full sm:w-1/4 gap-4 ">
                         <label className="font-montBold">Our newsletter</label>
                         <label className="text-lg text-light">
                             Your E-mail
@@ -66,7 +67,7 @@ export default function Footer() {
                         <hr className="text-light" />
                         <Button text="Subscribe" block />
                     </div>
-                    <div className="grid justify-items-center lg:content-end lg:justify-items-end lg:gap-4 gap-8 my-10 lg:my-0  w-full lg:w-1/3">
+                    <div className="grid justify-items-center sm:content-end sm:justify-items-end sm:gap-4 gap-8 my-10 sm:my-0  w-full sm:w-1/3">
                         <Image
                             width={216}
                             height={65}
@@ -82,14 +83,14 @@ export default function Footer() {
                     </div>
                 </div>
                 <hr />
-                <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-between">
+                <div className="flex flex-col sm:flex-row gap-4 lg:gap-0 items-center justify-between">
                     <div className="flex text-grey gap-4 ">
                         <span className="">@ cinnamon</span>
                         <Link href='/' className="underline font-montBold">
                             Privacy policy
                         </Link>
                     </div>
-                    <hr className=" h-0.5 w-full bg-grey lg:hidden"/>
+                    <hr className=" h-0.5 w-full bg-grey sm:hidden"/>
                     <div className="flex gap-4">
                             <Link
                                 href="https://www.linkedin.com/company/cinnamon-llc"
@@ -204,5 +205,6 @@ export default function Footer() {
                 </div>
             </div>
         </div>
+       </div>
     );
 }

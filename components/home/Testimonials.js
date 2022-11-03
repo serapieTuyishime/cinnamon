@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Testimonials() {
     return (
-        <div className="flex flex-col lg:flex-row px-6 lg:px-20 pt-14 pb-22 lg:py-32 ">
+        <div className="flex flex-col lg:flex-row px-6  max-w-6xl container mx-auto pt-14 pb-22 lg:py-32 ">
             <div className="grid gap-10">
                 <h1 className="text-3xl sm:text-4xl lg:text-4.3xl font-montBold leading-snug lg:w-4/5 ">
                     They’re consistent, and the communication is good.

@@ -19,21 +19,21 @@ export default function Blogs() {
         ],
     };
     return (
-        <div className="grid gap-10 mx-6 lg:mx-20 py-40">
-            <h1 className="sm:w-3/5 leading-normal lg:w-2/5 text-4.3xl lg:text-5xl font-montBold mt-4">
+        <div className="grid gap-10 px-6 max-w-6xl container mx-auto py-40  overflow-hidden">
+            <h1 className="leading-normal w-1/3 lg:w-2/5 text-4.3xl lg:text-5xl font-montBold mt-4">
                 Stay in the loop on tech topics
             </h1>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="inline-flex lg:grid grid-cols-3 gap-8">
                 {data.images.map((key, index) => {
                     return (
                         <Link
-                            className="grid gap-4 content-start hover:text-primary "
+                            className="grid gap-4 content-start hover:text-primary w-[352px] lg:w-full"
                             key={key}
                             href="/blogs"
                         >
                             <Image
-                                height={192.18}
-                                width={345}
+                                height={215.94}
+                                width={352}
                                 alt={data.titles[index]}
                                 src={data.images[index]}
                             />

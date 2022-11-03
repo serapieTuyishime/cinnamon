@@ -16,7 +16,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
     return (
-        <div className="container mx-auto">
+        <div className="">
             <Header />
             <Spotlight color="success" source="/hero1.png" />
             <SpotlightText

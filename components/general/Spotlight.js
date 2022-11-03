@@ -5,7 +5,7 @@ export default function Spotlight({
 }) {
     return (
         <div
-            className={`bg-${color} bg-opacity-70 mx-6 lg:mx-20 overflow-hidden`}
+            className={`bg-${color} bg-opacity-70 max-w-6xl mx-auto overflow-hidden`}
         >
             <Image
                 height={518.25}
