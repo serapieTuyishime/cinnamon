@@ -5,6 +5,7 @@ import Button from "../Button";
 
 export default function Navigation() {
     const [pageScrolled, setpageScrolled] = useState(false);
+    const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -20,7 +21,10 @@ export default function Navigation() {
             windowHeight > 50 ? setpageScrolled(true) : setpageScrolled(false);
         }
     };
-
+    const data = {
+        links: ["/projects", "/services", "/about", "/careers", "/blog"],
+        texts: ["projects", "services", "about us", "careers", "blog"],
+    };
     return (
         <div
             className={`sticky top-0 z-10 ${
@@ -48,22 +52,20 @@ export default function Navigation() {
                     )}
                 </Link>
                 <div className="hidden lg:flex font-montSemiBold  gap-8 capitalize">
-                    <Link href="/projects">Projects</Link>
-                    <Link href="/services">Services</Link>
-                    <Link href="/about" className="whitespace-pre">
-                        About us
-                    </Link>
-                    <Link href="/careers">Careers</Link>
-                    <Link href="/blog">Blog</Link>
+                    {data.links.map((key, index) => {
+                        return (
+                            <Link
+                                href={data.links[index]}
+                                key={key}
+                                className="hover:text-primary relative after:hidden hover:after:block after:absolute after:w-1.5 after:rounded-full after:h-1.5 after:bg-primary after:bottom-0 after:translate-y-4 after:right-8"
+                            >
+                                {data.texts[index]}
+                            </Link>
+                        );
+                    })}
                 </div>
                 <div className="hidden lg:flex items-center gap-8">
                     <div className="rounded-full hover:bg-primary ">
-                        {/* <Image
-                            src="/play.svg"
-                            height={46}
-                            width={46}
-                            alt="Play button"
-                        /> */}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="64"
@@ -77,13 +79,79 @@ export default function Navigation() {
                     </div>
                     <Button text="contact us" />
                 </div>
-                <Image
-                    src="/menu.svg"
-                    height={32}
-                    width={32}
-                    alt="Menu"
-                    className="lg:hidden"
-                />
+                {modalVisible ? (
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="lg:hidden"
+                        onClick={() => setModalVisible(false)}
+                    >
+                        <path
+                            d="M24 8L8 24"
+                            stroke="currentColor"
+                            stroke-width="2.66667"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M8 8L24 24"
+                            stroke="currentColor"
+                            stroke-width="2.66667"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                ) : (
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="lg:hidden"
+                        onClick={() => setModalVisible(true)}
+                    >
+                        <path
+                            d="M5.33301 8H26.6663"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M5.33301 16H18.6663"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M5.33301 24H23.9997"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                )}
+            </div>
+            <div
+                className={`w-screen h-screen absolute text-lg text-grey dark-area grid space-y-8 pt-8 text-center content-start ${
+                    !modalVisible && "hidden"
+                } `}
+            >
+                <Link href="/">Home</Link>
+                <Link href="/projects">Projects</Link>
+                <Link href="/services">Services</Link>
+                <Link href="/about" className="whitespace-pre">
+                    About us
+                </Link>
+                <Link href="/careers">Careers</Link>
+                <Link href="/blog">Blog</Link>
+                <Link href="/blog">Contact us</Link>
             </div>
         </div>
     );

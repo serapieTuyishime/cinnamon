@@ -3,7 +3,10 @@ import Image from "next/image";
 export default function Testimonials() {
     return (
         <div className="flex flex-col lg:flex-row px-6  max-w-6xl container mx-auto pt-14 pb-22 lg:py-32 ">
-            <div className="grid gap-10">
+            <div className="grid gap-10 relative">
+                <div className="font-montBold text-9xl rotate-180 text-primary text-opacity-10 max-w-max  max-h-max absolute -top-10 -left-10  h-20">
+                    ’’
+                </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-4.3xl font-montBold leading-snug lg:w-4/5 ">
                     They’re consistent, and the communication is good.
                 </h1>
@@ -44,7 +47,13 @@ export default function Testimonials() {
                 </div>
             </div>
             <div className="lg:w-1/4 flex flex-col pt-8 justify-between">
-                <Image src="/ping.png" width={200} height={67.94} alt="ping" className="hidden lg:inline-block" />
+                <Image
+                    src="/ping.png"
+                    width={200}
+                    height={67.94}
+                    alt="ping"
+                    className="hidden lg:inline-block"
+                />
                 <div className="text-primary flex gap-3 items-center ">
                     <Image
                         width={11.3}
